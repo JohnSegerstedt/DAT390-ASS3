@@ -526,6 +526,7 @@ GameObject:
   - component: {fileID: 8136597127470133280}
   - component: {fileID: 8601952834290408794}
   - component: {fileID: 8601952834290408795}
+  - component: {fileID: 1257800440203774449}
   m_Layer: 0
   m_Name: BasicPlant
   m_TagString: Untagged
@@ -586,3 +587,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1257800440203774449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8908453587783412378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59783ddb5423d584095b4c95ffc08e63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 8601952834290408795}
+  playerContainer: {fileID: 8908453587783412378}

@@ -7,42 +7,42 @@ public class ObjectPoolingManager : MonoBehaviour
     private static ObjectPoolingManager instance;
     public static ObjectPoolingManager Instance { get { return instance; } }
 
-    public GameObject peaPrefab;
-    public int numOfPeas = 2;
+    public GameObject gameObjectPrefab; // todo, currently hard coded to pea
+    public int numOfGameObjects = 2;
 
-    private List<GameObject> peas;
+    private List<GameObject> gameObjects;
     
     void Awake()
     {
         instance = this;
 
-        //Preload peas
-        peas = new List<GameObject>(numOfPeas);
+        //Preload gameObjects
+        gameObjects = new List<GameObject>(numOfGameObjects);
 
-        for(int i = 0; i < numOfPeas; i++)
+        for(int i = 0; i < numOfGameObjects; i++)
         {
-            GameObject prefabInstance = Instantiate(peaPrefab);
+            GameObject prefabInstance = Instantiate(gameObjectPrefab);
             prefabInstance.transform.SetParent(transform);
             prefabInstance.SetActive(false);
-            peas.Add(prefabInstance);
+            gameObjects.Add(prefabInstance);
         }
     }
 
-   public GameObject GetPea()
+   public GameObject GetGameObject()
     {
-        foreach (GameObject pea in peas)
+        foreach (GameObject gameObject in gameObjects)
         {
-            if (!pea.activeInHierarchy)
+            if (!gameObject.activeInHierarchy)
             {
-                pea.SetActive(true);
-                return pea;
+                gameObject.SetActive(true);
+                return gameObject;
             }
         }
-
-        GameObject prefabInstance = Instantiate(peaPrefab);
+		
+        GameObject prefabInstance = Instantiate(gameObjectPrefab);
         prefabInstance.transform.SetParent(transform);
         prefabInstance.SetActive(false);
-        peas.Add(prefabInstance);
+        gameObjects.Add(prefabInstance);
 
         return prefabInstance;
     }

@@ -1,27 +1,22 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pea : MonoBehaviour
-{
-    public float speed = 4f;
-    public float lifeDuration = 40f;
-    private float lifeTime;
+public class Pea : GamePiece {
 
-    void OnEnable()
-    {
-        lifeTime = lifeDuration;
-    }
+	private MovementBehaviour movementBehaviour;
+	private TemporalBehaviour temporalBehaviour;
+	private ProjectileBehaviour projectileBehaviour;
 
-    void Update()
-    {
-        transform.position += transform.forward * speed * Time.deltaTime;
 
-        // deactivate the pea otherwise
-        lifeTime -= Time.deltaTime;
-        if (lifeTime <= 0f)
-        {
-            gameObject.SetActive(false);
-        }
-    }
+	public void Start() {
+		movementBehaviour = gameObject.AddComponent<MovementBehaviour>() as MovementBehaviour;	
+		temporalBehaviour = gameObject.AddComponent<TemporalBehaviour>() as TemporalBehaviour;	
+		projectileBehaviour = gameObject.AddComponent<ProjectileBehaviour>() as ProjectileBehaviour;	
+		movementBehaviour.Initialize(this, 40f, transform.forward);
+		temporalBehaviour.Initialize(this, 4f);
+		projectileBehaviour.Initialize(this, 10f, new List<string>(){"Zombie"});
+	}
+
+
+
 }
