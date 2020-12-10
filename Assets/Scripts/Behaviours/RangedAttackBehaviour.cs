@@ -9,14 +9,16 @@ public class RangedAttackBehaviour : Subject {
 	[SerializeField] private float attackRange;
 	[SerializeField] private float cooldown;
 	[SerializeField] private Transform shootingPoint; // todo - create shooting point object instead
-	[SerializeField] private List<string> possibleTargets;
+	[SerializeField] private List<GamePieceTag> possibleTargets;
 
 	private GamePiece gamePiece;
 	private float currentCooldown = 0f;
 	private GamePiece target;
+	private List<string> possibleTargetsString = new List<string>();
 
 	public void Start() {
 		gamePiece = gameObject.GetComponent<GamePiece>();
+		foreach(GamePieceTag gamePieceTag in possibleTargets) possibleTargetsString.Add(gamePieceTag.ToString());
 	}
 
 	public void Update() {
@@ -65,7 +67,7 @@ public class RangedAttackBehaviour : Subject {
 	private bool IsLegalTarget(GamePiece potentialTarget){
 		if(!potentialTarget) return false;
 		if(!potentialTarget.gameObject.activeSelf) return false;
-		if(!possibleTargets.Contains(potentialTarget.transform.tag)) return false;
+		if(!possibleTargetsString.Contains(potentialTarget.transform.tag)) return false;
 		if(potentialTarget.GetComponent<HealthBehaviour>() == null) return false;
 		return true;
 	}

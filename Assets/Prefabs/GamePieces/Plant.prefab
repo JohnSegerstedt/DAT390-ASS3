@@ -91,8 +91,7 @@ MonoBehaviour:
   attackRange: 20
   cooldown: 2
   shootingPoint: {fileID: 8034893003313197445}
-  possibleTargets:
-  - Zombie
+  possibleTargets: 01000000
 --- !u!114 &3852679807439126148
 MonoBehaviour:
   m_ObjectHideFlags: 0

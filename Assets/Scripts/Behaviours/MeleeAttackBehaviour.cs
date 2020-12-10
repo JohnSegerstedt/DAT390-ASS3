@@ -9,15 +9,17 @@ public class MeleeAttackBehaviour : Subject {
 
 	[SerializeField] private float cooldown;
 	[SerializeField] private float attackDamage;
-	[SerializeField] private List<string> possibleTargets;
+	[SerializeField] private List<GamePieceTag> possibleTargets;
 	
 	private GamePiece gamePiece;
 	private bool isAttacking = false;
 	private float currentCooldown = 0f;
 	private GamePiece target;
+	private List<string> possibleTargetsString = new List<string>();
 
 	public void Start() {
 		gamePiece = gameObject.GetComponent<GamePiece>();
+		foreach(GamePieceTag gamePieceTag in possibleTargets) possibleTargetsString.Add(gamePieceTag.ToString());
 	}
 
 	public void Update() {
@@ -59,7 +61,7 @@ public class MeleeAttackBehaviour : Subject {
 	private bool IsLegalTarget(GamePiece potentialTarget){
 		if(!potentialTarget) return false;
 		if(!potentialTarget.gameObject.activeSelf) return false;
-		if(!possibleTargets.Contains(potentialTarget.transform.tag)) return false;
+		if(!possibleTargetsString.Contains(potentialTarget.transform.tag)) return false;
 		if(potentialTarget.GetComponent<HealthBehaviour>() == null) return false;
 		return true;
 	}

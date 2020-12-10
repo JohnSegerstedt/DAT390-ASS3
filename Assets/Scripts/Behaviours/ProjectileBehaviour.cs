@@ -6,12 +6,14 @@ using UnityEngine;
 public class ProjectileBehaviour : MonoBehaviour {
 
 	[SerializeField] private float damage;
-	[SerializeField] private List<string> possibleTargets; // setting this ensures no "friendly fire"
+	[SerializeField] private List<GamePieceTag> possibleTargets; // setting this ensures no "friendly fire"
 
 	private GamePiece gamePiece;
+	private List<string> possibleTargetsString = new List<string>();
 
 	public void Start() {
 		gamePiece = gameObject.GetComponent<GamePiece>();
+		foreach(GamePieceTag gamePieceTag in possibleTargets) possibleTargetsString.Add(gamePieceTag.ToString());
 	}
 
 	private void OnTriggerEnter(Collider collider) {
@@ -24,7 +26,7 @@ public class ProjectileBehaviour : MonoBehaviour {
 		if(!target) return false;
 		if(target == gameObject) return false;
 		if(!target.gameObject.activeSelf) return false;
-		if(possibleTargets != null && possibleTargets.Count > 0 && !possibleTargets.Contains(target.transform.tag)) return false;
+		if(possibleTargets != null && possibleTargets.Count > 0 && !possibleTargetsString.Contains(target.transform.tag)) return false;
 		if(target.GetComponent<HealthBehaviour>() == null) return false;
 		return true;
 	}
