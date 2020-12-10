@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7039680164759582462}
   m_Layer: 0
   m_Name: Plant
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,10 +42,10 @@ BoxCollider:
   m_GameObject: {fileID: 1243884767313367366}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2, y: 4, z: 3}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!114 &7039680164759582462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59783ddb5423d584095b4c95ffc08e63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootingPoint: {fileID: 2101560957258856798}
 --- !u!1001 &4597359866438785746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -163,5 +164,10 @@ PrefabInstance:
 --- !u!4 &5703779836521786098 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8136597127470133280, guid: bfaba6d2fddbeb14698044fbbe6a0606, type: 3}
+  m_PrefabInstance: {fileID: 4597359866438785746}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2101560957258856798 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2515019592741872524, guid: bfaba6d2fddbeb14698044fbbe6a0606, type: 3}
   m_PrefabInstance: {fileID: 4597359866438785746}
   m_PrefabAsset: {fileID: 0}

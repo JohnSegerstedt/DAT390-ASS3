@@ -10,6 +10,7 @@ public class TemporalBehaviour : MonoBehaviour {
 	public void Initialize(GamePiece newGamePiece, float newLifeDuration){
 		gamePiece = newGamePiece;
 		lifeDuration = newLifeDuration;
+        lifeTime = newLifeDuration;
 	}
 
     void OnEnable(){

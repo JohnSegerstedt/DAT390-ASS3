@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MovementBehaviour : MonoBehaviour {
+public class MovementBehaviour : Observer {
 
 	public GamePiece gamePiece;
 	public float movementSpeed;
@@ -26,4 +26,17 @@ public class MovementBehaviour : MonoBehaviour {
 	public void SetMove(bool newMove){
 		move = newMove;
 	}
+
+	override public void HandleEvent(EventEnum eventEnum){
+		switch (eventEnum){
+			case EventEnum.ATTACKING:
+				SetMove(false);
+				break;
+			case EventEnum.NOT_ATTACKING:
+				SetMove(true);
+				break;
+			default:
+				break;
+      }
+   }
 }

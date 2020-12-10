@@ -27,9 +27,11 @@ public class ObjectPoolingManager : MonoBehaviour
             gameObjects.Add(prefabInstance);
         }
     }
+	
 
    public GameObject GetGameObject()
     {
+		
         foreach (GameObject gameObject in gameObjects)
         {
             if (!gameObject.activeInHierarchy)

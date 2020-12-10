@@ -14,11 +14,11 @@ public class AnimationBehaviour : Observer {
 	}
 
 
-	// todo fix animation transition
+
 	override public void HandleEvent(EventEnum eventEnum){
 		switch (eventEnum){
 			case EventEnum.ATTACK:
-				animator.SetBool("isShooting", true);
+				animator.SetTrigger("shoot");
 				break;
 			default:
 				break;

@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+// todo, make more like Unity
 public class Plant : GamePiece {
 
+	public GameObject shootingPoint;
 
 	private RangedAttackBehaviour rangedAttackBehaviour;
 	private HealthBehaviour healthBehaviour;
@@ -15,7 +16,7 @@ public class Plant : GamePiece {
 		rangedAttackBehaviour = gameObject.AddComponent<RangedAttackBehaviour>() as RangedAttackBehaviour;
 		healthBehaviour = gameObject.AddComponent<HealthBehaviour>() as HealthBehaviour;
 		animationBehaviour = gameObject.AddComponent<AnimationBehaviour>() as AnimationBehaviour;
-		rangedAttackBehaviour.Initialize(this, 200, 1f, new Vector3(0f, 3.5f, 0f), new List<string>(){"Zombie"});
+		rangedAttackBehaviour.Initialize(this, 20, 2f, shootingPoint.transform, new List<string>(){"Zombie"});
 		healthBehaviour.Initialize(this, 100f);
 		animationBehaviour.Initialize(this, GetComponentInChildren<Animator>(), new List<Subject>(){rangedAttackBehaviour}); 
     }
