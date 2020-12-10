@@ -4,24 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // todo, move Subject to a Behaviour class
-// todo, create MeleeAttackBehaviour class
+[RequireComponent(typeof(GamePiece))]
 public class MeleeAttackBehaviour : Subject {
 
+	[SerializeField] private float cooldown;
+	[SerializeField] private float attackDamage;
+	[SerializeField] private List<string> possibleTargets;
+	
 	private GamePiece gamePiece;
-	private float cooldown;
-	private float attackDamage;
-	private List<string> possibleTargets;
-
 	private bool isAttacking = false;
 	private float currentCooldown = 0f;
 	private GamePiece target;
 
-
-	public void Initialize(GamePiece newGamePiece, float newCooldown, float newAttackDamage, List<string> newPossibleTargets){
-		gamePiece = newGamePiece;
-		cooldown = newCooldown;
-		attackDamage = newAttackDamage;
-		possibleTargets = newPossibleTargets;
+	public void Start() {
+		gamePiece = gameObject.GetComponent<GamePiece>();
 	}
 
 	public void Update() {

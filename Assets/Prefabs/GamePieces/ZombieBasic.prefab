@@ -150,9 +150,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 571737484075154953}
-  - component: {fileID: -8853319003605655706}
   - component: {fileID: 4350091832437135762}
   - component: {fileID: 6124053173522227871}
+  - component: {fileID: 912947277894433643}
+  - component: {fileID: 4239779114910263763}
+  - component: {fileID: 4811240908815599418}
+  - component: {fileID: 3638807674145159783}
   m_Layer: 0
   m_Name: ZombieBasic
   m_TagString: Zombie
@@ -175,18 +178,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-8853319003605655706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300438108767667914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7988ac4826e64ca49a12b9f027b885d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &4350091832437135762
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -216,6 +207,63 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &912947277894433643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300438108767667914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ea4f51d39edbb40877845b5c893fce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4239779114910263763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300438108767667914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0daa8beb28c46324c85f3f30beb31c21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  maxHealth: 100
+--- !u!114 &4811240908815599418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300438108767667914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17f3921cc85ac24ba153bab58739752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 1
+  attackDamage: 10
+  possibleTargets:
+  - Plant
+--- !u!114 &3638807674145159783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300438108767667914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb3e27bfd4e3f964eb51b3620d7b8cb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 1
+  subjects:
+  - {fileID: 4811240908815599418}
 --- !u!1 &430108201939756684
 GameObject:
   m_ObjectHideFlags: 0

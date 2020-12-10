@@ -1,26 +1,21 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(GamePiece))]
 public class MovementBehaviour : Observer {
 
-	public GamePiece gamePiece;
-	public float movementSpeed;
-	public Vector3 movementDirection;
+	[SerializeField] private float movementSpeed;
+	[SerializeField] private Subject[] subjects;
+	
+	private GamePiece gamePiece;
+	private bool move = true;
 
-	private bool move;
-
-	public void Initialize(GamePiece newGamePiece, float newMovementSpeed, Vector3 newMovementDirection){
-		Initialize(newGamePiece, newMovementSpeed, newMovementDirection, true);
-	}
-
-	public void Initialize(GamePiece newGamePiece, float newMovementSpeed, Vector3 newMovementDirection, bool newMove){
-		gamePiece = newGamePiece;
-		movementSpeed = newMovementSpeed;
-		movementDirection = newMovementDirection;
-		move = newMove;
+	private void Start() {
+		gamePiece = gameObject.GetComponent<GamePiece>();
+		foreach(Subject subject in subjects) subject.AddObserver(this);
 	}
 
 	void Update(){
-        if(move) gamePiece.transform.position += movementDirection * movementSpeed * Time.deltaTime;
+        if(move) gamePiece.transform.position += gamePiece.transform.forward * movementSpeed * Time.deltaTime;
     }
 
 	public void SetMove(bool newMove){

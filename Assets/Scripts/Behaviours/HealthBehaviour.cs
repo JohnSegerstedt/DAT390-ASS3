@@ -1,19 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(GamePiece))]
 public class HealthBehaviour : MonoBehaviour {
 
+	[SerializeField] private float currentHealth;
+	[SerializeField] private float maxHealth;
+	
+	private GamePiece gamePiece;
 
-	public GamePiece gamePiece;
-	public float currentHealth;
-	public float maxHealth;
-
-	public void Initialize(GamePiece newGamePiece, float newHealth){
-		gamePiece = newGamePiece;
-		currentHealth = newHealth;
-		maxHealth = newHealth;
+	public void Start() {
+		gamePiece = gameObject.GetComponent<GamePiece>();
+		currentHealth = maxHealth;
 	}
+
 
 	public void ApplyDamage(float damage){
 		if(currentHealth == Mathf.Infinity) return;

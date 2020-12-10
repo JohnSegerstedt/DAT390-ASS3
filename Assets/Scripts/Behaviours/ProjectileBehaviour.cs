@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(GamePiece))]
 public class ProjectileBehaviour : MonoBehaviour {
 
+	[SerializeField] private float damage;
+	[SerializeField] private List<string> possibleTargets; // setting this ensures no "friendly fire"
 
 	private GamePiece gamePiece;
-	private float damage;
-	private List<string> possibleTargets; // setting this ensures no "friendly fire"
-	
-	public void Initialize(GamePiece newGamePiece, float newDamage, List<string> newPossibleTargets){
-		gamePiece = newGamePiece;
-		damage = newDamage;
-		possibleTargets = newPossibleTargets;
+
+	public void Start() {
+		gamePiece = gameObject.GetComponent<GamePiece>();
 	}
 
 	private void OnTriggerEnter(Collider collider) {

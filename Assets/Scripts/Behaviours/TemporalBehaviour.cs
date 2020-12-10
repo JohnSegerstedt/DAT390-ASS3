@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(GamePiece))]
 public class TemporalBehaviour : MonoBehaviour {
 
-	public GamePiece gamePiece;
-    public float lifeDuration;
-
+    [SerializeField] private float lifeDuration;
+	
+	private GamePiece gamePiece;
 	private float lifeTime;
 
-	public void Initialize(GamePiece newGamePiece, float newLifeDuration){
-		gamePiece = newGamePiece;
-		lifeDuration = newLifeDuration;
-        lifeTime = newLifeDuration;
+	private void Start() {
+		gamePiece = gameObject.GetComponent<GamePiece>();
+		lifeTime = lifeDuration;
 	}
 
     void OnEnable(){

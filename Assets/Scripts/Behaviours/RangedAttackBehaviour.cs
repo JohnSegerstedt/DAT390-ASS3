@@ -1,28 +1,22 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 // todo, move Subject to a Behaviour class
-// todo, create MeleeAttackBehaviour class
+[RequireComponent(typeof(GamePiece))]
 public class RangedAttackBehaviour : Subject {
 
-	private GamePiece gamePiece;
-	private float attackRange;
-	private float cooldown;
-	private Transform shootingPoint; // toto - create shooting point object instead
-	private List<string> possibleTargets;
+	[SerializeField] private float attackRange;
+	[SerializeField] private float cooldown;
+	[SerializeField] private Transform shootingPoint; // todo - create shooting point object instead
+	[SerializeField] private List<string> possibleTargets;
 
+	private GamePiece gamePiece;
 	private float currentCooldown = 0f;
 	private GamePiece target;
 
-
-	public void Initialize(GamePiece newGamePiece, float newAttackRange, float newCooldown, Transform newShootingPoint, List<string> newPossibleTargets){
-		gamePiece = newGamePiece;
-		attackRange = newAttackRange;
-		cooldown = newCooldown;
-		shootingPoint = newShootingPoint;
-		possibleTargets = newPossibleTargets;
+	public void Start() {
+		gamePiece = gameObject.GetComponent<GamePiece>();
 	}
 
 	public void Update() {
