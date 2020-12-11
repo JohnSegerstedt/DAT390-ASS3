@@ -4,14 +4,16 @@
 public class MovementBehaviour : Observer {
 
 	[SerializeField] private float movementSpeed;
+	[SerializeField] private bool moveOnStart = true;
 	[SerializeField] private Subject[] subjects;
 	
 	private GamePiece gamePiece;
-	private bool move = true;
+	private bool move;
 
 	private void Start() {
 		gamePiece = gameObject.GetComponent<GamePiece>();
 		foreach(Subject subject in subjects) subject.AddObserver(this);
+		move = moveOnStart;
 	}
 
 	void Update(){

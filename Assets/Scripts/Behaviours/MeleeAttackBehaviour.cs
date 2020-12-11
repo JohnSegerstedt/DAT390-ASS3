@@ -35,6 +35,7 @@ public class MeleeAttackBehaviour : Subject {
 	}
 
 	private void SetIsAttacking(bool newIsAttacking){
+		if(newIsAttacking == isAttacking) return;
 		isAttacking = newIsAttacking;
 		NotifyObservers(newIsAttacking ? EventEnum.ATTACKING : EventEnum.NOT_ATTACKING);
 	}

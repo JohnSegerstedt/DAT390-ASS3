@@ -172,7 +172,7 @@ Transform:
   m_GameObject: {fileID: 300438108767667914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 543450652476788606}
   m_Father: {fileID: 0}
@@ -247,8 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 1
   attackDamage: 10
-  possibleTargets:
-  - Plant
+  possibleTargets: 00000000
 --- !u!114 &3638807674145159783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,7 +260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3e27bfd4e3f964eb51b3620d7b8cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 1
+  movementSpeed: 0.07
+  moveOnStart: 1
   subjects:
   - {fileID: 4811240908815599418}
 --- !u!1 &430108201939756684

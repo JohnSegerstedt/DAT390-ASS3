@@ -6,9 +6,10 @@ using UnityEngine;
 [RequireComponent(typeof(GamePiece))]
 public class RangedAttackBehaviour : Subject {
 
+	[SerializeField] private PoolObject projectileType;
 	[SerializeField] private float attackRange;
-	[SerializeField] private float cooldown;
-	[SerializeField] private Transform shootingPoint; // todo - create shooting point object instead
+	[SerializeField] private float attackCooldown;
+	[SerializeField] private Transform shootingPoint;
 	[SerializeField] private List<GamePieceTag> possibleTargets;
 
 	private GamePiece gamePiece;
@@ -22,16 +23,16 @@ public class RangedAttackBehaviour : Subject {
 	}
 
 	public void Update() {
-		if(currentCooldown < cooldown) currentCooldown += Time.deltaTime;
+		if(currentCooldown < attackCooldown) currentCooldown += Time.deltaTime;
 		else AttackTarget();
 	}
 	
 
 	public void Attack(){
 		if(IsLegalTarget(target)) {
-			GameObject peaObject = ObjectPoolingManager.Instance.GetGameObject(); // todo, make projectile type abstract
-            peaObject.transform.position = shootingPoint.position;
-            peaObject.transform.forward = gamePiece.transform.forward;
+			GameObject projectile = ObjectPoolManager.Instance.GetGameObject(projectileType);
+            projectile.transform.position = shootingPoint.position;
+            projectile.transform.forward = gamePiece.transform.forward;
 			currentCooldown = 0f;
 			NotifyObservers(EventEnum.ATTACK);
 		}
