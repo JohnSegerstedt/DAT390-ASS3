@@ -10,7 +10,7 @@ public class MeleeAttackBehaviour : Subject {
 	[SerializeField] private float cooldown;
 	[SerializeField] private float attackDamage;
 	[SerializeField] private List<GamePieceTag> possibleTargets;
-	
+
 	private GamePiece gamePiece;
 	private bool isAttacking = false;
 	private float currentCooldown = 0f;
@@ -20,6 +20,7 @@ public class MeleeAttackBehaviour : Subject {
 	public void Start() {
 		gamePiece = gameObject.GetComponent<GamePiece>();
 		foreach(GamePieceTag gamePieceTag in possibleTargets) possibleTargetsString.Add(gamePieceTag.ToString());
+
 	}
 
 	public void Update() {

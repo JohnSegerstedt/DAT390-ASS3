@@ -6,7 +6,9 @@ public class MovementBehaviour : Observer {
 	[SerializeField] private float movementSpeed;
 	[SerializeField] private bool moveOnStart = true;
 	[SerializeField] private Subject[] subjects;
-	
+
+	[SerializeField] private Animator animator;
+
 	private GamePiece gamePiece;
 	private bool move;
 
@@ -28,9 +30,11 @@ public class MovementBehaviour : Observer {
 		switch (eventEnum){
 			case EventEnum.ATTACKING:
 				SetMove(false);
+				animator.SetTrigger("eat");
 				break;
 			case EventEnum.NOT_ATTACKING:
 				SetMove(true);
+				animator.SetTrigger("walk");
 				break;
 			default:
 				break;
