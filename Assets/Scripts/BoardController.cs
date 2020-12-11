@@ -7,15 +7,16 @@ public class BoardController : MonoBehaviour
 {
     public Vector2Int boardSize;
     public GameObject boardTile;
-    public GameObject prefab;
+    public GameObject lawnMowerPrefab;
     public float showUpAnimationSecs;
+
     private Grid mGrid;
     private Plane mLocalPlane;
 
     private Vector2Int mMinCell;
     private Vector2Int mMaxCell;
 
-    private Dictionary<Vector3Int, GameObject> mPieces = new Dictionary<Vector3Int, GameObject>();
+    private Dictionary<Vector2Int, GameObject> mPlants = new Dictionary<Vector2Int, GameObject>();
     private GameObject[] mTiles;
 
     private float mShowedUpTime;
@@ -37,12 +38,68 @@ public class BoardController : MonoBehaviour
     private void Start()
     {
         mShowedUpTime = Time.time;
+        for (var i = mMinCell.x; i <= mMaxCell.x; i++)
+        {
+            SpawnInCell(lawnMowerPrefab, new Vector2Int(i, -1));
+        }
     }
 
-    public void Update()
-    {
-        if (!Application.isPlaying) return;
+    public Vector2Int MinCell => mMinCell;
+    public Vector2Int MaxCell => mMaxCell;
 
+    public bool Project(Vector3 pixelCoords, out Vector2Int cell)
+    {
+        return Project(Camera.main.ScreenPointToRay(pixelCoords), out cell);
+    }
+
+    public bool Project(Vector2 pixelCoords, out Vector2Int cell)
+    {
+        return Project(Camera.main.ScreenPointToRay(pixelCoords), out cell);
+    }
+
+    private bool Project(Ray ray, out Vector2Int cell)
+    {
+        cell = Vector2Int.zero;
+        ray = new Ray(
+            transform.InverseTransformPoint(ray.origin),
+            transform.InverseTransformDirection(ray.direction)
+        );
+
+        if (!mLocalPlane.Raycast(ray, out var enter)) return false;
+
+        var point = ray.GetPoint(enter);
+        var cell3 = mGrid.LocalToCell(point);
+        cell = new Vector2Int(cell3.x, cell3.z);
+        return true;
+    }
+
+    public GameObject SpawnInCell(GameObject prefab, Vector2Int cell)
+    {
+        var pos = mGrid.GetCellCenterLocal(new Vector3Int(cell.x, 0, cell.y)) - Vector3.up * mGrid.cellSize.y * 0.5f;
+        return Instantiate(prefab,
+            transform.TransformPoint(pos) + prefab.transform.position,
+            transform.rotation * prefab.transform.localRotation,
+            transform);
+    }
+
+    public bool TryToPlant(GameObject prefab, Vector2Int cell)
+    {
+        if (cell.x >= mMinCell.x && cell.x <= mMaxCell.x &&
+            cell.y >= mMinCell.y && cell.y <= mMaxCell.y)
+        {
+            if (!mPlants.ContainsKey(cell))
+            {
+                var plant = SpawnInCell(prefab, cell);
+                mPlants.Add(cell, plant);
+                plant.GetComponent<GamePiece>().OnDeath += () => mPlants.Remove(cell);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void ShowUpAnimation()
+    {
         var elapsedTime = Time.time - mShowedUpTime;
         if (elapsedTime < showUpAnimationSecs)
         {
@@ -60,42 +117,12 @@ public class BoardController : MonoBehaviour
                 mTiles[i].transform.localRotation = rotation;
             }
         }
+    }
 
-        var mouseClick = Input.GetMouseButtonDown(0);
-        var touchClick = Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began;
-        if (mouseClick || touchClick)
-        {
-            Ray ray;
-            if (mouseClick)
-            {
-                ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            }
-            else
-            {
-                ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-            }
-            ray = new Ray(
-                transform.InverseTransformPoint(ray.origin),
-                transform.InverseTransformDirection(ray.direction)
-            );
-            if (!mLocalPlane.Raycast(ray, out var enter)) return;
-
-            var point = ray.GetPoint(enter);
-
-            var cell = mGrid.LocalToCell(point);
-            if (cell.x >= mMinCell.x && cell.x <= mMaxCell.x &&
-                cell.z >= mMinCell.y && cell.z <= mMaxCell.y)
-            {
-                if (!mPieces.ContainsKey(cell))
-                {
-                    var pos = mGrid.GetCellCenterLocal(cell) - Vector3.up * mGrid.cellSize.y * 0.5f;
-                    mPieces.Add(cell, Instantiate(prefab,
-                        transform.TransformPoint(pos) + prefab.transform.localPosition,
-                        transform.rotation * prefab.transform.localRotation,
-                        transform));
-                }
-            }
-        }
+    private void Update()
+    {
+        if (!Application.isPlaying) return;
+        ShowUpAnimation();
     }
 
     private void OnValidate()

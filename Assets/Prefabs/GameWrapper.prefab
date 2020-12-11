@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5372563345580255374}
   - component: {fileID: 691240284518293563}
   - component: {fileID: 6991773751756938067}
+  - component: {fileID: 7971691317896469113}
+  - component: {fileID: 3818592424439184150}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -58,8 +60,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boardSize: {x: 5, y: 10}
   boardTile: {fileID: 621236562239418882, guid: 3dd0b1437f9cb6e4c810c5deed50cc97, type: 3}
-  prefab: {fileID: 1243884767313367366, guid: b1c80493ee176d54eb2cc27127c4ecfd, type: 3}
+  lawnMowerPrefab: {fileID: 8137920652431356065, guid: 1e767ded416e83646b4f54042f61d805, type: 3}
   showUpAnimationSecs: 1
+--- !u!114 &7971691317896469113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774484880931011454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33dd1ea759809fb459f247c9e13a50cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plants:
+  - prefab: {fileID: 1243884767313367366, guid: b1c80493ee176d54eb2cc27127c4ecfd, type: 3}
+    cost: 2
+  - prefab: {fileID: 3142209667235023327, guid: 6fcb4f60479bee1468f51532bcfe1a70, type: 3}
+    cost: 5
+  iconPrefab: {fileID: 2541588898193294896, guid: 99eaf196ece05d04c9042210881ea82f, type: 3}
+  canvas: {fileID: 0}
+--- !u!114 &3818592424439184150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774484880931011454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dd042c6137f64244bf5e138f214f381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombiePrefab: {fileID: 300438108767667914, guid: 717097b2dd05e174faae3a792d899b30, type: 3}
+  increaseSquadMaxPeriod: 60
+  increaseSquadMinPeriod: 90
+  squadSectionDelay: 0.5
+  minSquadCooldown: 5
+  maxSquadCooldown: 30
 --- !u!1 &4384322465438418528
 GameObject:
   m_ObjectHideFlags: 0

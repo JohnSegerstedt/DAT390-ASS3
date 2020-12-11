@@ -4,7 +4,7 @@ using UnityEngine;
 
 // todo, move Subject to a Behaviour class
 [RequireComponent(typeof(GamePiece))]
-public class RangedAttackBehaviour : Subject {
+public class RangedAttackBehaviour : MonoBehaviour {
 
 	[SerializeField] private PoolObject projectileType;
 	[SerializeField] private float attackRange;
@@ -31,10 +31,11 @@ public class RangedAttackBehaviour : Subject {
 	public void Attack(){
 		if(IsLegalTarget(target)) {
 			GameObject projectile = ObjectPoolManager.Instance.GetGameObject(projectileType);
+            if (!projectile) return;
             projectile.transform.position = shootingPoint.position;
             projectile.transform.forward = gamePiece.transform.forward;
 			currentCooldown = 0f;
-			NotifyObservers(EventEnum.ATTACK);
+			gamePiece.NotifyObservers(EventEnum.ATTACK);
 		}
 	}
 

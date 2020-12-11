@@ -5,7 +5,7 @@ using UnityEngine;
 
 // todo, move Subject to a Behaviour class
 [RequireComponent(typeof(GamePiece))]
-public class MeleeAttackBehaviour : Subject {
+public class MeleeAttackBehaviour : MonoBehaviour {
 
 	[SerializeField] private float cooldown;
 	[SerializeField] private float attackDamage;
@@ -24,21 +24,25 @@ public class MeleeAttackBehaviour : Subject {
 	}
 
 	public void Update() {
-		if(currentCooldown < cooldown) currentCooldown += Time.deltaTime;
-		else AttackTarget();
+        if (currentCooldown < cooldown) currentCooldown += Time.deltaTime;
+        else if (isAttacking) Attack();
 	}
 
-	private void AttackTarget(){
-		AcquireTarget();
-		SetIsAttacking(target);
-		if(target == null) return;
-		Attack();
-	}
+    private void OnTriggerEnter(Collider other)
+    {
+        currentCooldown = cooldown;
+        SetIsAttacking(true);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        SetIsAttacking(false);
+    }
 
 	private void SetIsAttacking(bool newIsAttacking){
 		if(newIsAttacking == isAttacking) return;
 		isAttacking = newIsAttacking;
-		NotifyObservers(newIsAttacking ? EventEnum.ATTACKING : EventEnum.NOT_ATTACKING);
+		gamePiece.NotifyObservers(newIsAttacking ? EventEnum.ATTACKING : EventEnum.NOT_ATTACKING);
 	}
 
 	public void Attack(){

@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 4239779114910263763}
   - component: {fileID: 4811240908815599418}
   - component: {fileID: 3638807674145159783}
+  - component: {fileID: -8708989862456311298}
   m_Layer: 0
   m_Name: ZombieBasic
   m_TagString: Zombie
@@ -170,14 +171,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300438108767667914}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 543450652476788606}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!65 &4350091832437135762
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -264,7 +265,21 @@ MonoBehaviour:
   moveOnStart: 1
   subjects:
   - {fileID: 4811240908815599418}
+--- !u!114 &-8708989862456311298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300438108767667914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef3fdc4921e9cac4aab8eccdea29aef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   animator: {fileID: 3233733713936348204}
+  subjects:
+  - {fileID: 912947277894433643}
 --- !u!1 &430108201939756684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1489,9 +1504,9 @@ Animation:
   m_GameObject: {fileID: 6026860428050497673}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 7fc42936d52aa204cb9e58491d59ad9c, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 7fc42936d52aa204cb9e58491d59ad9c, type: 2}
+  - {fileID: 0}
   m_WrapMode: 2
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
