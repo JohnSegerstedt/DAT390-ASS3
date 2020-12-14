@@ -17,10 +17,16 @@ public class HealthBehaviour : MonoBehaviour {
 	}
 
 
-	public void ApplyDamage(float damage){
-		if(currentHealth == Mathf.Infinity) return;
+	public bool ApplyDamage(float damage){
+		if(currentHealth == Mathf.Infinity)
+            return false;
 		currentHealth -= damage;
-		if(currentHealth <= 0) gamePiece.Deactive();
+        if (currentHealth <= 0)
+        {
+            gamePiece.Deactive();
+            return true;
+        }
+        return false;
 	}
 
 	public void Heal(float healingAmount){

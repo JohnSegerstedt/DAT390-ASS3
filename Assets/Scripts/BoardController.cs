@@ -37,6 +37,7 @@ public class BoardController : MonoBehaviour
 
     private void Start()
     {
+        if (!Application.isPlaying) return;
         mShowedUpTime = Time.time;
         for (var i = mMinCell.x; i <= mMaxCell.x; i++)
         {
