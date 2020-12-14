@@ -26,7 +26,6 @@ public class RangedAttackBehaviour : MonoBehaviour {
 		if(currentCooldown < attackCooldown) currentCooldown += Time.deltaTime;
 		else AttackTarget();
 	}
-	
 
 	public void Attack(){
 		if(IsLegalTarget(target)) {

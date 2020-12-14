@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,15 @@ public class ToggleBehaviour : MonoBehaviour
 {
     public Action OnClicked;
     private Button mButton;
+    private Image mImage;
+    private TextMeshProUGUI mText;
+    public Sprite Sprite {
+        get => mImage.sprite;
+        set { mImage.sprite = value; }
+    }
+    public string Cost {
+        get => mText.text; set { mText.text = value; }
+    }
     public void Click()
     {
         OnClicked?.Invoke();
@@ -18,5 +28,7 @@ public class ToggleBehaviour : MonoBehaviour
     private void Awake()
     {
         mButton = GetComponent<Button>();
+        mImage = GetComponentInChildren<Image>();
+        mText = GetComponentInChildren<TextMeshProUGUI>();
     }
 }
