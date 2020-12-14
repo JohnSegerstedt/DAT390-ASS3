@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 3142209667235023321}
   - component: {fileID: 3142209667235023326}
   - component: {fileID: 92622040506214773}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SunFlower
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3902371431123917824}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SpawningPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,53 +205,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8355681027845998417, guid: 1440680f519694d4cafc421f8c8a5ce6, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: -7190059023978816660, guid: 1440680f519694d4cafc421f8c8a5ce6, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: -442458103599798089, guid: 1440680f519694d4cafc421f8c8a5ce6, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: -259972160606440404, guid: 1440680f519694d4cafc421f8c8a5ce6, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1440680f519694d4cafc421f8c8a5ce6, type: 3}
       propertyPath: m_Name
       value: SunFlower
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 1440680f519694d4cafc421f8c8a5ce6, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2757917208697877576, guid: 1440680f519694d4cafc421f8c8a5ce6, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4798435638552916562, guid: 1440680f519694d4cafc421f8c8a5ce6, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6396198683485325086, guid: 1440680f519694d4cafc421f8c8a5ce6, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6657560127643677590, guid: 1440680f519694d4cafc421f8c8a5ce6, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7660515339722215164, guid: 1440680f519694d4cafc421f8c8a5ce6, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8338217525123062793, guid: 1440680f519694d4cafc421f8c8a5ce6, type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1440680f519694d4cafc421f8c8a5ce6, type: 3}
