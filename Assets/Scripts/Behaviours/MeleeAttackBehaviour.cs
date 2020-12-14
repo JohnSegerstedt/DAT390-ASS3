@@ -42,7 +42,7 @@ public class MeleeAttackBehaviour : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == target.gameObject)
+        if (other.gameObject == target?.gameObject)
         {
             SetIsAttacking(false);
             target = null;

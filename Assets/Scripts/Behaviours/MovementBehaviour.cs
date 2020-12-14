@@ -4,6 +4,8 @@
 public class MovementBehaviour : Observer {
     [SerializeField] private float movementSpeed;
 	[SerializeField] private bool moveOnStart = true;
+    [SerializeField] private bool moveOnEvent = false;
+    [SerializeField] private EventEnum eventToTriggerMove;
 
 	private GamePiece gamePiece;
 	private bool moving;
@@ -29,15 +31,23 @@ public class MovementBehaviour : Observer {
     }
 
 	override public void HandleEvent(EventEnum eventEnum){
-		switch (eventEnum){
-			case EventEnum.ATTACKING:
-				SetMove(false);
-				break;
-			case EventEnum.NOT_ATTACKING:
-                SetMove(true);
-				break;
-			default:
-				break;
-      }
+        if (moveOnEvent && eventToTriggerMove == eventEnum)
+        {
+            SetMove(true);
+        }
+        else
+        {
+            switch (eventEnum)
+            {
+                case EventEnum.ATTACKING:
+                    SetMove(false);
+                    break;
+                case EventEnum.NOT_ATTACKING:
+                    SetMove(true);
+                    break;
+                default:
+                    break;
+            }
+        }
    }
 }
