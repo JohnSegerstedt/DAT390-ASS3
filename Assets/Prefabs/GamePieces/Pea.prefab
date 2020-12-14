@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1887050111679121859}
   - component: {fileID: 1070674971260409004}
   - component: {fileID: 6512002822622660368}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 1
   moveOnStart: 1
-  subjects: []
 --- !u!114 &6512002822622660368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +173,10 @@ PrefabInstance:
     - target: {fileID: 2118245592464026238, guid: 4d666b3fb447ef649be243cfe4ad4239, type: 3}
       propertyPath: m_Name
       value: Pea
+      objectReference: {fileID: 0}
+    - target: {fileID: 2118245592464026238, guid: 4d666b3fb447ef649be243cfe4ad4239, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d666b3fb447ef649be243cfe4ad4239, type: 3}

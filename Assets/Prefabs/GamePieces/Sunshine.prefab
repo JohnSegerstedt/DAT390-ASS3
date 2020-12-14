@@ -11,7 +11,10 @@ GameObject:
   - component: {fileID: 4476256182241817930}
   - component: {fileID: -2805046640522097282}
   - component: {fileID: -8000985039696812258}
-  m_Layer: 0
+  - component: {fileID: 7915006852088668982}
+  - component: {fileID: 576391633560941646}
+  - component: {fileID: -5924942550696556970}
+  m_Layer: 8
   m_Name: Sunshine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,6 +61,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeDuration: 5
+--- !u!54 &7915006852088668982
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4225254374943004491}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 10
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &576391633560941646
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4225254374943004491}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4561439, y: 2.3546014, z: 1.9433212}
+  m_Center: {x: 0.026573911, y: 0.06554596, z: -0.112960525}
+--- !u!114 &-5924942550696556970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4225254374943004491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5585bbd8231d066499cffc0db33e74b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throwForce: 1.5
 --- !u!1001 &6602329254501876265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -124,6 +169,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f682a555bc109cb469514ae54a5c1230, type: 3}
       propertyPath: m_Name
       value: PickupSun
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f682a555bc109cb469514ae54a5c1230, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f682a555bc109cb469514ae54a5c1230, type: 3}

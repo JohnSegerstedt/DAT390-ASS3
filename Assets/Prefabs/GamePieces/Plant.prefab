@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4191753235099709062}
   - component: {fileID: 4348735306459631672}
   - component: {fileID: 3852679807439126148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plant
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -74,8 +74,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5236944161272481673}
-  subjects:
-  - {fileID: 4348735306459631672}
 --- !u!114 &4348735306459631672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,6 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dbcc70d08a1a9f4fabfc4afc5573e07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectileType: 0
   attackRange: 1.5
   attackCooldown: 2
   shootingPoint: {fileID: 8034893003313197445}
@@ -129,6 +128,30 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1764589586349036632, guid: bfaba6d2fddbeb14698044fbbe6a0606, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238830577964571752, guid: bfaba6d2fddbeb14698044fbbe6a0606, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515019592741872524, guid: bfaba6d2fddbeb14698044fbbe6a0606, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756002312478424790, guid: bfaba6d2fddbeb14698044fbbe6a0606, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4195715932570475295, guid: bfaba6d2fddbeb14698044fbbe6a0606, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5194606801468863382, guid: bfaba6d2fddbeb14698044fbbe6a0606, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5258407968462535684, guid: bfaba6d2fddbeb14698044fbbe6a0606, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
@@ -144,6 +167,26 @@ PrefabInstance:
     - target: {fileID: 5258407968462535684, guid: bfaba6d2fddbeb14698044fbbe6a0606, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078757427866036096, guid: bfaba6d2fddbeb14698044fbbe6a0606, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964140648594193527, guid: bfaba6d2fddbeb14698044fbbe6a0606, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7391990058071618610, guid: bfaba6d2fddbeb14698044fbbe6a0606, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826947378621121233, guid: bfaba6d2fddbeb14698044fbbe6a0606, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8090094104880319469, guid: bfaba6d2fddbeb14698044fbbe6a0606, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8136597127470133280, guid: bfaba6d2fddbeb14698044fbbe6a0606, type: 3}
       propertyPath: m_RootOrder
@@ -204,6 +247,10 @@ PrefabInstance:
     - target: {fileID: 8908453587783412378, guid: bfaba6d2fddbeb14698044fbbe6a0606, type: 3}
       propertyPath: m_Name
       value: BasicPlant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908453587783412378, guid: bfaba6d2fddbeb14698044fbbe6a0606, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1257800440203774449, guid: bfaba6d2fddbeb14698044fbbe6a0606, type: 3}
