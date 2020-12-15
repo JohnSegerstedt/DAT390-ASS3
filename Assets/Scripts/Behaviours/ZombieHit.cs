@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ZombieHit : MonoBehaviour
 {
-    public ParticleSystem peaParticles;
     public ParticleSystem dirtParticles;
     public HealthBehaviour healthBehaviour;
     private float health;
@@ -12,7 +11,6 @@ public class ZombieHit : MonoBehaviour
 
     void Start()
     {
-        peaParticles.Stop();
         dirtParticles.Stop();
     }
 
@@ -29,14 +27,6 @@ public class ZombieHit : MonoBehaviour
         if (health <20)
         {
             dirtParticles.Emit(10);
-        }
-    }
-
-    private void OnTriggerEnter(Collider collider)
-    {
-        if(collider.tag == "Pea")
-        {
-            peaParticles.Emit(10);
         }
     }
 }

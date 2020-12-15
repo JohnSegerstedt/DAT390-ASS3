@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f51e8e098a953c24a84da883f1d6f789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionParticles: {fileID: 2743442208997324099, guid: 8ef9a092737fbac4d876e2e4e657df06, type: 3}
   damage: 10
   possibleTargets: 01000000
 --- !u!114 &1070674971260409004
