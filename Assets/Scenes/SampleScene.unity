@@ -569,7 +569,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 856591933}
+  - {fileID: 1256724730}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -693,7 +693,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   follower: {fileID: 1478544912}
---- !u!21 &856591933
+--- !u!1 &902042467 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4969826801572819784, guid: b72b82fbb5186b74b9bf861343ad735e, type: 3}
+  m_PrefabInstance: {fileID: 4969826801389207549}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &942261591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4969826801378724434, guid: b72b82fbb5186b74b9bf861343ad735e, type: 3}
+  m_PrefabInstance: {fileID: 4969826801389207549}
+  m_PrefabAsset: {fileID: 0}
+--- !u!21 &1256724730
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -702,7 +712,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: 'verbatimMaterial
 
-    39640'
+    14898'
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -722,16 +732,6 @@ Material:
     m_Colors:
     - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
   m_BuildTextureStacks: []
---- !u!1 &902042467 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4969826801572819784, guid: b72b82fbb5186b74b9bf861343ad735e, type: 3}
-  m_PrefabInstance: {fileID: 4969826801389207549}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &942261591 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4969826801378724434, guid: b72b82fbb5186b74b9bf861343ad735e, type: 3}
-  m_PrefabInstance: {fileID: 4969826801389207549}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1478544909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1032,9 +1032,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 4969826802603171106, guid: b72b82fbb5186b74b9bf861343ad735e, type: 3}
+    - target: {fileID: 5470689191616162851, guid: b72b82fbb5186b74b9bf861343ad735e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b72b82fbb5186b74b9bf861343ad735e, type: 3}

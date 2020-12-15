@@ -61,6 +61,8 @@ MonoBehaviour:
   boardSize: {x: 5, y: 10}
   boardTile: {fileID: 621236562239418882, guid: 3dd0b1437f9cb6e4c810c5deed50cc97, type: 3}
   lawnMowerPrefab: {fileID: 8137920652431356065, guid: 1e767ded416e83646b4f54042f61d805, type: 3}
+  fencePrefab: {fileID: 1307502036031349842, guid: aad0ce79d539c9a43896e8bad42d95d2, type: 3}
+  outOfBoundsPrefab: {fileID: 3922843255175746327, guid: 7b33b8e569f563845b4c034f896034b2, type: 3}
   showUpAnimationSecs: 1
 --- !u!114 &7971691317896469113
 MonoBehaviour:
