@@ -1,14 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DropSunBehaviour : MonoBehaviour
 {
     public float throwForce = 1.5f;
 
-    void Start()
+    void OnEnable()
     {
-        GetComponent<Rigidbody>().AddForce(transform.right * throwForce, ForceMode.Impulse);
+        GetComponent<Rigidbody>().AddForce(
+            new Vector3(Random.value - .5f, .5f, Random.value - .5f).normalized * throwForce,
+            ForceMode.Impulse
+        );
     }
 
 }
