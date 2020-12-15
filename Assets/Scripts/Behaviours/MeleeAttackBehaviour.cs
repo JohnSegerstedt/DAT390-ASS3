@@ -7,7 +7,6 @@ using UnityEngine;
 [RequireComponent(typeof(GamePiece))]
 public class MeleeAttackBehaviour : MonoBehaviour
 {
-
     [SerializeField] private float cooldown;
     [SerializeField] private float attackDamage;
     [SerializeField] private List<GamePieceTag> possibleTargets;

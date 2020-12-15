@@ -6,10 +6,30 @@ using UnityEngine.SceneManagement;
 public class ProgramManager : Subject {
 
     private static ProgramManager instance;
-    public static ProgramManager Instance { get { return instance; } }
+    public static ProgramManager Instance {
+        get {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<ProgramManager>();
+                if (instance == null)
+                {
+                    var obj = new GameObject("Program Manager");
+                    instance = obj.AddComponent<ProgramManager>();
+                }
+            }
+            return instance;
+        }
+    }
 
 	private void Awake() {
-        instance = this;
+        if (instance)
+        {
+            DestroyImmediate(this);
+        }
+        else
+        {
+            instance = this;
+        }
 	}
 
 	private bool isGameAlive = true;

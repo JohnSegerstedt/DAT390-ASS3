@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8137920652431356064}
   - component: {fileID: 3181033519149708411}
-  - component: {fileID: 4572700726858959296}
   - component: {fileID: 6769228591532154484}
   - component: {fileID: 8240862324488780808}
+  - component: {fileID: 2258211908773988781}
   m_Layer: 0
   m_Name: LawnMower
   m_TagString: Untagged
@@ -47,21 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17ea4f51d39edbb40877845b5c893fce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4572700726858959296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8137920652431356065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c17f3921cc85ac24ba153bab58739752, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldown: 0.01
-  attackDamage: 1000
-  possibleTargets: 01000000
 --- !u!114 &6769228591532154484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,8 +74,22 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.07828218, y: 0.05902064, z: 0.110512435}
-  m_Center: {x: 0.0025745928, y: 0.044481605, z: -0.00033804774}
+  m_Size: {x: 0.07828218, y: 0.05902064, z: 0.1324912}
+  m_Center: {x: 0.0025745928, y: 0.044481605, z: 0.010651324}
+--- !u!114 &2258211908773988781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8137920652431356065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2a6cd90303768d4d814dd2030857c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smashedZombie: {fileID: 300438108767667914, guid: 7856c5feb7833b642b19c9b03e305af2, type: 3}
+  possibleTargets: 01000000
 --- !u!1001 &8137920652540257480
 PrefabInstance:
   m_ObjectHideFlags: 0

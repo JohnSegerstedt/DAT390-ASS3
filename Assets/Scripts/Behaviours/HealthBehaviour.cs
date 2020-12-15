@@ -22,6 +22,19 @@ public class HealthBehaviour : MonoBehaviour {
 		if(currentHealth == Mathf.Infinity)
             return false;
 		currentHealth -= damage;
+        return CheckDead();
+	}
+
+    public void Kill()
+    {
+        if (currentHealth == Mathf.Infinity)
+            return;
+        currentHealth = 0;
+        CheckDead();
+    }
+
+    private bool CheckDead()
+    {
         if (currentHealth <= 0)
         {
             gamePiece.Deactive();
@@ -32,7 +45,7 @@ public class HealthBehaviour : MonoBehaviour {
             return true;
         }
         return false;
-	}
+    }
 
 	public void Heal(float healingAmount){
 		if(currentHealth == Mathf.Infinity) return;
