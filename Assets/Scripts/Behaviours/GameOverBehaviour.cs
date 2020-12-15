@@ -13,11 +13,12 @@ public class GameOverBehaviour : MonoBehaviour {
 	public void Start() {
         gamePiece = gameObject.GetComponent<GamePiece>();
         foreach (GamePieceTag gamePieceTag in possibleTargets) possibleTargetsString.Add(gamePieceTag.ToString());
-		programManager = FindObjectOfType<ProgramManager>();
+		programManager = ProgramManager.Instance;
 	}
 
 	private void OnTriggerEnter(Collider collider) {
-		if(possibleTargetsString.Contains(collider.transform.tag)) programManager.SetGameOver();
+		if(possibleTargetsString.Contains(collider.transform.tag))
+            programManager.SetGameOver();
 	}
 
 }
