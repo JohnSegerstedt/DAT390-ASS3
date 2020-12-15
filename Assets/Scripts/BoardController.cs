@@ -49,6 +49,10 @@ public class BoardController : MonoBehaviour
 
     public Vector2Int MinCell => mMinCell;
     public Vector2Int MaxCell => mMaxCell;
+    public Vector2Int RandomCell => new Vector2Int(
+        Random.Range(MinCell.x, MaxCell.x),
+        Random.Range(MinCell.y, MaxCell.y)
+    );
 
     public bool Project(Vector3 pixelCoords, out Vector2Int cell)
     {
@@ -78,11 +82,16 @@ public class BoardController : MonoBehaviour
 
     public GameObject SpawnInCell(GameObject prefab, Vector2Int cell)
     {
-        var pos = mGrid.GetCellCenterLocal(new Vector3Int(cell.x, 0, cell.y)) - Vector3.up * mGrid.cellSize.y * 0.5f;
+        var pos = GetCell(cell);
         return Instantiate(prefab,
             transform.TransformPoint(pos) + prefab.transform.position,
             transform.rotation * prefab.transform.localRotation,
             transform);
+    }
+
+    public Vector3 GetCell(Vector2Int cell)
+    {
+        return mGrid.GetCellCenterLocal(new Vector3Int(cell.x, 0, cell.y)) - Vector3.up * mGrid.cellSize.y * 0.5f;
     }
 
     public bool TryToPlant(GameObject prefab, Vector2Int cell)

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6991773751756938067}
   - component: {fileID: 7971691317896469113}
   - component: {fileID: 3818592424439184150}
+  - component: {fileID: 1133627166696796206}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -105,6 +106,19 @@ MonoBehaviour:
   squadSectionDelay: 0.5
   minSquadCooldown: 5
   maxSquadCooldown: 30
+--- !u!114 &1133627166696796206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774484880931011454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646fb41fd28b8c740a115e707ef1cbca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowPassKernelWidthInSeconds: 1
 --- !u!1 &3089655493681045307
 GameObject:
   m_ObjectHideFlags: 0
