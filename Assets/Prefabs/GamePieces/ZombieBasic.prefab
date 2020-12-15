@@ -235,6 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 100
   maxHealth: 100
+  scoreOnDeath: 1
 --- !u!114 &4811240908815599418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +265,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 0.07
   moveOnStart: 1
+  moveOnEvent: 0
+  eventToTriggerMove: 0
 --- !u!114 &-8708989862456311298
 MonoBehaviour:
   m_ObjectHideFlags: 0

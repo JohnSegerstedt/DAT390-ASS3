@@ -8,6 +8,7 @@ public class HealthBehaviour : MonoBehaviour {
 
 	[SerializeField] private float currentHealth;
 	[SerializeField] private float maxHealth;
+    [SerializeField] private bool scoreOnDeath;
 	
 	private GamePiece gamePiece;
 
@@ -24,6 +25,10 @@ public class HealthBehaviour : MonoBehaviour {
         if (currentHealth <= 0)
         {
             gamePiece.Deactive();
+            if (scoreOnDeath)
+            {
+                ScoreCounter.score += 1;
+            }
             return true;
         }
         return false;
