@@ -9,6 +9,7 @@ public class HealthBehaviour : MonoBehaviour {
 	[SerializeField] private float currentHealth;
 	[SerializeField] private float maxHealth;
     [SerializeField] private bool scoreOnDeath;
+    [SerializeField] private GameObject spawnWhenDeath;
 	
 	private GamePiece gamePiece;
 
@@ -41,6 +42,10 @@ public class HealthBehaviour : MonoBehaviour {
             if (scoreOnDeath)
             {
                 ScoreCounter.score += 1;
+            }
+            if (spawnWhenDeath)
+            {
+                Instantiate(spawnWhenDeath, transform.position, transform.rotation);
             }
             return true;
         }
