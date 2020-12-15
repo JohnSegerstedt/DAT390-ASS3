@@ -8,6 +8,8 @@ public class BoardController : MonoBehaviour
     public Vector2Int boardSize;
     public GameObject boardTile;
     public GameObject lawnMowerPrefab;
+	public GameObject fencePrefab;
+	public GameObject outOfBoundsPrefab;
     public float showUpAnimationSecs;
 
     private Grid mGrid;
@@ -43,6 +45,9 @@ public class BoardController : MonoBehaviour
         {
             SpawnInCell(lawnMowerPrefab, new Vector2Int(i, -1));
         }
+		SpawnInCell(fencePrefab, new Vector2Int((mMaxCell.x-1)/2, -2));
+		SpawnInCell(outOfBoundsPrefab, new Vector2Int((mMaxCell.x-1)/2, -3));
+		SpawnInCell(outOfBoundsPrefab, new Vector2Int((mMaxCell.x-1)/2, boardSize.y+3));
     }
 
     public Vector2Int MinCell => mMinCell;
