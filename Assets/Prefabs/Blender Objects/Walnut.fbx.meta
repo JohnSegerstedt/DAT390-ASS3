@@ -1,0 +1,264 @@
+fileFormatVersion: 2
+guid: 63870de779733654b81c143db6de0673
+ModelImporter:
+  serializedVersion: 20101
+  internalIDToNameTable:
+  - first:
+      74: -1789154911151235470
+    second: Eye_L|Eye_LAction
+  - first:
+      74: -3446727626383190778
+    second: Eye_L|Eye_RAction
+  - first:
+      74: -4739851750900362774
+    second: Eye_L|FullAction
+  - first:
+      74: 2985855071524535611
+    second: Eye_L|HalfAction
+  - first:
+      74: -3448475840082377102
+    second: Eye_L|HeadInjuredAction
+  - first:
+      74: -3947414187292248943
+    second: Eye_R|Eye_LAction
+  - first:
+      74: -9151047242728623978
+    second: Eye_R|Eye_RAction
+  - first:
+      74: -3684728447509444087
+    second: Eye_R|FullAction
+  - first:
+      74: -7350355012751180817
+    second: Eye_R|HalfAction
+  - first:
+      74: -1463711928654455783
+    second: Eye_R|HeadInjuredAction
+  - first:
+      74: -6165193810591464158
+    second: Full|Eye_LAction
+  - first:
+      74: -8530041428341793890
+    second: Full|Eye_RAction
+  - first:
+      74: 1851782602944481967
+    second: Full|FullAction
+  - first:
+      74: 6032420419158103931
+    second: Full|HalfAction
+  - first:
+      74: -762718377043503112
+    second: Full|HeadInjuredAction
+  - first:
+      74: 2432242528089688305
+    second: HeadInjured|Eye_LAction
+  - first:
+      74: -5559534597032704002
+    second: HeadInjured|Eye_RAction
+  - first:
+      74: -924731609869863998
+    second: HeadInjured|FullAction
+  - first:
+      74: 6427310955725108630
+    second: HeadInjured|HalfAction
+  - first:
+      74: -6271170916190661151
+    second: HeadInjured|HeadInjuredAction
+  - first:
+      74: -6676314822584716008
+    second: Half|Eye_LAction
+  - first:
+      74: 7998748884297849832
+    second: Half|Eye_RAction
+  - first:
+      74: -1785120159717778317
+    second: Half|FullAction
+  - first:
+      74: 7592296616620491388
+    second: Half|HalfAction
+  - first:
+      74: -1054017498942298787
+    second: Half|HeadInjuredAction
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IrisMat.003
+    second: {fileID: 2100000, guid: ebc0778d9d9b4b446b309baf63614226, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IrisMat.004
+    second: {fileID: 2100000, guid: 74811dac24761064ca19041ffb893e80, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WalnutBrainMat
+    second: {fileID: 2100000, guid: 2f34d79366944bd4fac9bdb157da42dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WalnutMat.001
+    second: {fileID: 2100000, guid: 53d64179ee2961348b48f6fc2f2aa29f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WalnutMat.002
+    second: {fileID: 2100000, guid: 0ef57f47064923b4aba6defe89f315c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WalnutMat.005
+    second: {fileID: 2100000, guid: 8a73340548f7eec4e9cc31b139083dfb, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Eye_L|Eye_LAction
+      takeName: Eye_L|Eye_LAction
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 139
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Eye_R|Eye_RAction
+      takeName: Eye_R|Eye_RAction
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 139
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.02
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.02
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

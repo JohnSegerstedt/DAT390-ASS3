@@ -51,4 +51,9 @@ public class HealthBehaviour : MonoBehaviour {
 		if(currentHealth == Mathf.Infinity) return;
 		currentHealth = Mathf.Min(currentHealth+healingAmount, maxHealth);
 	}
+
+    public float GetCurrentHealth()
+    {
+        return currentHealth;
+    }
 }
