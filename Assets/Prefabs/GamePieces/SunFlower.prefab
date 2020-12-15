@@ -63,7 +63,7 @@ Transform:
   m_GameObject: {fileID: 3142209667235023327}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_Children:
   - {fileID: 3902371431123917824}
   - {fileID: 3175572608129538098}
@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 50
   maxHealth: 50
+  scoreOnDeath: 0
 --- !u!114 &92622040506214773
 MonoBehaviour:
   m_ObjectHideFlags: 0
