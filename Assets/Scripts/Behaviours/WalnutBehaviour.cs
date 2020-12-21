@@ -17,14 +17,14 @@ public class WalnutBehaviour : MonoBehaviour
     {
         health =  healthBehaviour.GetCurrentHealth();
 
-        if (health < 80.0f)  // Change mesh to injured head
+        if (health <= 70.0f)  // Change mesh to injured head
         {
             injuredHead.SetActive(true);
 
             fullBody.SetActive(false);
         }
 
-        if (health < 50.0f)  // Change mesh to half body
+        if (health <= 50.0f)  // Change mesh to half body
         {
             halfBody.SetActive(true);
             

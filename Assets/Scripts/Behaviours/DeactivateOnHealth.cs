@@ -14,7 +14,7 @@ public class DeactivateOnHealth : MonoBehaviour
     {
         health = healthBehaviour.GetCurrentHealth();
 
-        if (health < 50.0f && objToDeactivate.activeSelf)
+        if (health <= 50.0f && objToDeactivate.activeSelf)
         {
             objToDeactivate.SetActive(false);
         }
