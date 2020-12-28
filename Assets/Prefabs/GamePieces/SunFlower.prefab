@@ -110,6 +110,7 @@ MonoBehaviour:
   currentHealth: 50
   maxHealth: 50
   scoreOnDeath: 0
+  spawnWhenDeath: {fileID: 0}
 --- !u!114 &92622040506214773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0538012298056bc4eaa510a53d8b3c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCooldown: 7
+  spawnCooldown: 10
   spawningPoint: {fileID: 3902371431123917824}
   spawnObject: 2
 --- !u!1 &4640444423242216100
