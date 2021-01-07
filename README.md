@@ -12,3 +12,6 @@ Requirement and How It is Met:
 * *Image Tracking*: The game board is instantiated on the detection of the physical game board token.
 * *Ray Casting*: Ray casting is used for detecting which grid square the player is attempting to purchases a plant onto.
 * *Additional Techniques from outside the Module*: Vuforia
+
+Video demonstration:
+https://www.youtube.com/watch?v=LZ9gXe-lHDE
